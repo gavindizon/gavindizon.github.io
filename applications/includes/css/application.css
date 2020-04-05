@@ -1,0 +1,10 @@
+.spacer{
+    min-height: 128px;
+}
+section{
+    padding: 4em 8em;
+    position: relative;
+}
+
+label{
+margin-top: 8px;}
