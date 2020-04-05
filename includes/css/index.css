@@ -176,3 +176,13 @@ section p{
     }
 
 }
+
+@media only screen and (max-width: 450px){
+    section{
+        padding: 4em 0em !important;
+    }
+    .myRoles{
+        padding: 0px 2em 0px 2em !important;
+    }
+
+}
