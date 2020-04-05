@@ -53,9 +53,21 @@
     <div class="container">    
         <h3>Application</h3>
     
-    <form class="row">
-        <label class="col-md-2">Cipher Text</label><input class="form-control col-md-4" type="text" id="cipher" placeholder="GavinDizon"/>
-    </form>
+    <div class="vigenere">
+        <div class="inputs text-center">
+        <label class="">Keyword</label><input class="form-control" type="text" id="key" value="KEY"/>
+        <label class="">Plain Text</label><input class="form-control" type="text" id="cipher" placeholder="GavinDizon"/>
+        <label class="">Cipher Text</label><input class="form-control" type="text" id="decipher" placeholder="GavinDizon"/>
+        <br>
+        <button class="btn btn-primary" id="cipherbtn">CIPHER</button>
+        <button class="btn btn-primary" id="decipherbtn">DECIPHER</button>
+
+        </div>
+    </div>
+    <br><br>    
+    <div id="result">
+
+    </div>    
     </div>
 </section>
 
@@ -70,4 +82,152 @@
     </div>
     
 </body>
+<script>
+$(document).ready(function(){
+    $('#cipherbtn').click(function(){
+        var cipher = $('#cipher').val().toUpperCase();
+        var key = $('#key').val().toUpperCase();
+        
+        var decipher = "";
+
+        j=0;
+
+        for(i= 0; i < cipher.length; i++){
+            if(cipher.charCodeAt(i) >= 65 && cipher.charCodeAt(i) <= 97 || cipher.charCodeAt(i) >= 97 && cipher.charCodeAt(i) <= 122 ){
+                var decipherHolder = cipher.charCodeAt(i) - 65 + key.charCodeAt(j) - 65;    
+                if(decipherHolder > 25)
+                    decipherHolder -=26;
+    
+                    decipherHolder +=65;
+    
+                decipher += String.fromCharCode(decipherHolder);
+    
+                j++;
+                if(j == key.length){
+                    j = 0;
+                }                    
+            }else{
+                decipher += cipher.charAt(i);
+            }
+        }
+        $('#decipher').val(decipher);
+
+       $('#result').html("<h2>Results:</h2>");
+
+       $('#result').append("<table style='width: 80%' class='text-center'>");
+            $('#result').append("<tr>");
+                $('#result').append("<th>Plaintext</th>");
+                $('#result').append("<th>Key</th>");
+                $('#result').append("<th>Initial Value</th>");
+                $('#result').append("<th>Final Value</th>");
+
+                $('#result').append("<th>Cipher</th>");
+            $('#result').append("</tr>");
+
+           keyNum = 0; 
+        for(i = 0; i < cipher.length; i++){
+
+
+            $('#result').append("<tr>");
+                if(cipher.charCodeAt(i) >= 65 && cipher.charCodeAt(i) <= 97){
+                    $('#result').append("<td>" + cipher.charAt(i) + " ("+ (cipher.charCodeAt(i) - 65) + ")</td>");
+                    $('#result').append("<td>" + key.charAt(keyNum) +  " (+"+ (key.charCodeAt(keyNum) - 65) + ")</td>");
+                    $('#result').append("<td>"+ (cipher.charCodeAt(i) - 65 + key.charCodeAt(keyNum) - 65) +"</td>");
+                    if((cipher.charCodeAt(i) - 65 + key.charCodeAt(keyNum) - 65) > 25)
+                        $('#result').append("<td>"+ ((cipher.charCodeAt(i) - 65 + key.charCodeAt(keyNum++) - 65) - 26) +"</td>");
+                    else    
+                        $('#result').append("<td>"+ (cipher.charCodeAt(i) - 65 + key.charCodeAt(keyNum++) - 65) +"</td>");
+
+                    $('#result').append("<td>"+ decipher.charAt(i) + "</td>");
+                }
+                else{
+                    $('#result').append("<td> </td>");
+                    $('#result').append("<td> </td>");
+                    $('#result').append("<td> </td>");
+                    $('#result').append("<td> </td>");
+                    $('#result').append("<td> </td>");
+
+                }
+            $('#result').append("</tr>");
+            if(keyNum == key.length)
+                keyNum = 0;
+        }
+
+
+    });
+
+    $('#decipherbtn').click(function(){
+        var decipher = $('#decipher').val().toUpperCase();
+        var key = $('#key').val().toUpperCase();
+        $('#cipher').val("");
+        var cipher = "";
+        j=0;
+        for(i= 0; i < decipher.length; i++){
+            if(decipher.charCodeAt(i) >= 65 && decipher.charCodeAt(i) <= 90 || decipher.charCodeAt(i) >= 97 && decipher.charCodeAt(i) <= 122 ){
+            var cipherHolder = (decipher.charCodeAt(i) - 65) - (key.charCodeAt(j) - 65);                
+            if(cipherHolder < 0)
+                cipherHolder +=26;
+
+                cipherHolder +=65;
+
+            cipher += String.fromCharCode(cipherHolder);
+
+            j++;
+            if(j == key.length){
+                j = 0;
+            }
+            }else{
+                cipher += decipher.charAt(i);
+            }
+        }
+        j = 0;
+        $('#cipher').val(cipher);
+    
+        $('#result').html("<h2>Results:</h2>");
+
+        $('#result').append("<table style='width: 80%' class='text-center'>");
+             $('#result').append("<tr>");
+                 $('#result').append("<th>Cipher</th>");
+                 $('#result').append("<th>Key</th>");
+                 $('#result').append("<th>Initial Value</th>");
+                 $('#result').append("<th>Final Value</th>");
+ 
+                 $('#result').append("<th>Plaintext</th>");
+             $('#result').append("</tr>");
+ 
+            keyNum = 0; 
+         for(i = 0; i < cipher.length; i++){
+ 
+ 
+             $('#result').append("<tr>");
+                 if(cipher.charCodeAt(i) >= 65 && cipher.charCodeAt(i) <= 97){
+                    $('#result').append("<td>"+ decipher.charAt(i) + " ("+ (decipher.charCodeAt(i) - 65) + ")</td>");
+
+                     $('#result').append("<td>" + key.charAt(keyNum) +  " (-"+ (key.charCodeAt(keyNum) - 65) + ")</td>");
+                     $('#result').append("<td>"+ ((decipher.charCodeAt(i) - 65) - (key.charCodeAt(keyNum) - 65)) +"</td>");
+                     if((decipher.charCodeAt(i) - 65) - (key.charCodeAt(keyNum) - 65) < 0)
+                         $('#result').append("<td>"+ (((decipher.charCodeAt(i) - 65) - (key.charCodeAt(keyNum++) - 65)) + 26) +"</td>");
+                     else    
+                         $('#result').append("<td>"+ ((decipher.charCodeAt(i) - 65) - (key.charCodeAt(keyNum++) - 65)) +"</td>");
+                    $('#result').append("<td>" + cipher.charAt(i) + "</td>");
+ 
+                 }
+                 else{
+                     $('#result').append("<td> </td>");
+                     $('#result').append("<td> </td>");
+                     $('#result').append("<td> </td>");
+                     $('#result').append("<td> </td>");
+                     $('#result').append("<td> </td>");
+ 
+                 }
+             $('#result').append("</tr>");
+             if(keyNum == key.length)
+                 keyNum = 0;
+         }
+    
+    });
+
+
+});
+</script>
 </html>
