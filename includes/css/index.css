@@ -1,0 +1,168 @@
+.background{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    background-image: url('../img/homeimage.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.introduction h2, .introduction h5{
+    text-align: center;
+}
+.introduction{
+    text-align: justify;
+}
+.introduction h5{
+    font-weight: lighter;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.8);    
+}
+section{
+    padding: 0px 0 318px;
+    
+}
+
+.section2{
+    margin-top: 160px;
+    padding-top: 168px;
+}
+.message{
+    position: relative;
+    color: #FFF;
+    z-index: 4;
+    padding-top: 360px;
+    margin: 0 auto;
+    text-align:center;
+}
+
+.introduction{
+    padding: 0px 2em 64px;
+}
+
+.myRoles{
+    padding: 96px 2em 0px 2em;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+.jobLists{
+    margin: 0 auto;
+}
+.jobCards{
+    border-radius: 25px;
+    width:250px;
+    height: 300px;
+    border: 3.5px solid rgba(255, 255, 255, 0.8);   
+    background-color: transparent;
+    z-index: 3;
+    margin: 0 auto;
+}
+.jobCards div{
+    text-align: center;
+}
+.jobCards .jobIcon{
+    margin-top: 32px;
+    padding: 16px;
+    font-size: 96px;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.8);
+}
+.jobCards .jobTitle{
+    padding: 16px;
+    font-size: 24px;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.8);
+}
+.jobCards .jobDesc{
+    display: none;
+    opacity: 1;
+    margin-top: -160px;
+    color:#FFF;
+    z-index:5;
+}
+.jobCards:hover > .jobIcon, .jobCards:hover > .jobTitle{
+    opacity: 0.1;
+}
+.jobCards:hover > .jobDesc{
+    opacity: 1;
+    display: block;
+}
+.jobSelection{
+    text-align: center;
+    margin-top: 8px;
+}
+.jobSelection input{
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.inputContainer .customRadio{
+    display: inline-block;
+    height: 15px !important;
+    width: 15px !important;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 6px;
+}
+.inputContainer:hover input ~ .customRadio{
+    background-color: #c4c4c4;
+}
+.inputContainer input:checked ~ .customRadio {
+    background-color: #FFF;
+  }
+
+.section3{
+    padding: 168px 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.section4{
+    padding: 128px 0px;
+}
+.affiliations{
+    margin: 0 auto;
+    text-align: center;
+}
+.affiliationList{
+    display:inline-block;
+}
+.affiliationCard{
+    background-color: #c4c4c4;
+    width: 200px;
+    height: 240px;
+    margin: 10px;
+    border-radius: 16px;
+    display: inline-block;
+}
+.section5{
+    padding: 128px 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+}
+.socmed{
+    text-align: center;
+    margin: 0 auto;
+}
+.socList{
+    display:inline-block;
+
+}
+.socList a{
+    text-decoration: none;
+    margin: 0px 24px;
+    font-size: 64px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.socList a:hover{
+    color: rgba(255, 255, 255, 1);
+}
+
+section p{
+    padding: 0em 2em;
+}

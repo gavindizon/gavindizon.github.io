@@ -1,0 +1,155 @@
+.navigation-bar{
+    width: 100%;
+    min-height: 80px;
+    background-color:azure;
+    position:fixed;
+    z-index: 999;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+nav{
+    font-family: Roboto; 
+    padding-top: 16px;
+    width:100%;
+}
+nav h2{
+    margin-top:8px;
+    margin-left: 1em;
+
+}
+nav h2 span{
+    font-weight: lighter;
+    color: #000;
+}
+nav ul{
+    position: static;
+}
+nav ul li{
+    list-style-type: none;
+    padding-right: 16px; 
+    display: inline-block;
+}
+nav div ul li a{
+    color: #000;
+    font-weight: 300;
+    font-size: 14px;
+}
+nav a:hover{
+    text-decoration: none;
+    font-weight: 400;
+    color: #000;
+}
+
+.nav-links-desktop{
+    line-height: 3em;
+    display: inline-flex;
+}
+.nav-links-mobile{
+    display: none;
+}
+#nav-list-mobile{
+   display: none;
+   position: relative;
+   background-color: #ddd;
+   padding-top: 5em;
+   text-align: center;
+}
+#nav-list-mobile a {
+    color: rgba(0, 0, 0, 0.8);
+    padding: 14px 16px;    
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+  }
+#nav-list-mobile i {
+    color: rgba(0, 0, 0, 0.8);
+    padding: 14px 16px;    
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+  }
+
+  #nav-list-mobile a:hover {
+    background-color: rgba(255,255,255, 0.6);
+    color: black;
+    display: block;
+  }
+input[type="search"]{
+    margin-left: 16px;
+    height: 32px;
+    width: 220px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    padding-left: 16px;
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    position: static;
+    background-color: rgba(0,0,0,0);
+}
+.search button{
+    border: 1px solid #000;
+    border-radius: 25px;
+    border-left: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    height: 32px;
+    line-height: 4px;
+    margin-left: -5px;
+    margin-bottom:0px;
+    position: static;
+    background-color: rgba(0,0,0,0);
+}
+.search button i{
+    font-size: 15px;
+}
+button:hover{
+    background-color: #000;
+}
+button i:hover{
+    color: #FFF;
+}
+.search{
+    display: inline-flexbox;
+}
+
+@media only screen and (max-width:991px){
+    ul li{
+        padding-right: 8px;
+        font-size: 12px;
+    }
+    input[type="search"]{
+        margin-left: 8px;
+    }
+    nav h2{
+        font-size: 24px;
+    }
+    input[type="search"]{
+        width: 180px;
+    }
+    #nav-list-mobile{
+        display: none;
+    }
+}
+@media only screen and (max-width:767px){
+    h2{
+        padding-top: 6px;
+        font-size: 24px !important;
+    }
+    .nav-links-desktop{
+        display: none;
+    }
+    .nav-links-mobile{
+        line-height: 2em;
+        padding: 0.5em;
+        display: inline-flex;
+        border-radius: 10px;
+    }
+    .nav-links-mobile i{
+        font-size: 32px;
+        color: rgba(0, 0, 0, 0.8);   
+        line-height: 0.75em;
+    }
+    .nav-links-mobile:hover{
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+}
