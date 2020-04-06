@@ -7,7 +7,35 @@ $(document).ready(function(){
                     $('.jobTitle h4').text("Web Developer");
                     $('.jobDesc p').text("I am a full-stacked Web Developer");
                 }
-        
+    var welcomeTopOffset = $(".section1").offset().top;
+    var introTopOffset = $(".section2").offset().top;
+    var jobTopOffset = $(".section3").offset().top;
+    var affilStatsTopOffset = $(".section4").offset().top;
+    var socSection = $(".section5").offset().top;
+                        
+
+    $(window).scroll(function(){
+        if(window.pageYOffset > introTopOffset - $(window).height() + 360){
+            $('.section2').removeClass('hide_content');
+            $('.section2').addClass('show_content');
+        }
+        if(window.pageYOffset > jobTopOffset - $(window).height() + 340){
+            $('.myRoles').removeClass('hide_contentleft');
+            $('.myRoles').addClass('show_contentleft');
+            $('.jobLists').removeClass('hide_contentright');
+            $('.jobLists').addClass('show_contentright');
+
+        }    
+    
+    });
+
+
+
+
+
+
+
+
 
     $('.jobSLCT').click(function(){
         job = false;

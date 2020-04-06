@@ -186,3 +186,36 @@ section p{
     }
 
 }
+
+.hide_content{
+    opacity: 0;
+    margin-bottom: -100px !important;
+}
+.show_content{
+    opacity: 1;
+    padding-bottom: 100px;
+    transition: 2s;
+}
+
+.hide_contentleft{
+  opacity: 0;
+  margin-left:-100px;  
+}
+
+.show_contentleft{
+    opacity: 1;
+    transition: 2s;
+}
+
+.hide_contentright{
+    opacity: 0;
+    margin-right:-100px;
+}
+
+.show_contentright{
+margin-right: 0px;
+    opacity: 1;
+    transition: 2s;
+}
+
+  
