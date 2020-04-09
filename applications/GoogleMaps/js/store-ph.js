@@ -15,7 +15,7 @@ let stores = [{
         },
         "address": {
             "streetAddressLine1": "Sen Gil Puyat Ave cor. Makati Ave",
-            "streetAddressLine2": "Sen. Gil Puyat cor. Makati Aves.",
+            "streetAddressLine2": "Sen. Gil Puyat cor. Makati Ave.",
             "streetAddressLine3": null,
             "city": "Makati City",
             "countrySubdivisionCode": "41",
@@ -504,7 +504,7 @@ let stores = [{
             "status": "ACTIVE"
         },
         "address": {
-            "streetAddressLine1": "Paseo de Roxas corner Makati Avenue",
+            "streetAddressLine1": "Paseo de Roxas cor. Makati Ave",
             "streetAddressLine2": "2F",
             "streetAddressLine3": null,
             "city": "Makati City",
@@ -1542,7 +1542,7 @@ let stores = [{
             "status": "ACTIVE"
         },
         "address": {
-            "streetAddressLine1": "Paseo de Roxas Ave, Salcedo Village",
+            "streetAddressLine1": "Paseo de Roxas Ave,",
             "streetAddressLine2": "Salcedo Village",
             "streetAddressLine3": null,
             "city": "Makati City",
@@ -2367,7 +2367,7 @@ let stores = [{
             "streetAddressLine1": "GF Jazz Residences",
             "streetAddressLine2": "Jupiter St corner N Garcia St",
             "streetAddressLine3": null,
-            "city": "Makti",
+            "city": "Makati",
             "countrySubdivisionCode": "00",
             "countryCode": "PH",
             "postalCode": "1209"
@@ -6242,8 +6242,8 @@ let stores = [{
             "status": "ACTIVE"
         },
         "address": {
-            "streetAddressLine1": "Fourth Ave & 30th St, Bonifacio Global",
-            "streetAddressLine2": "GF",
+            "streetAddressLine1": "4th Ave & 30th St, ",
+            "streetAddressLine2": "Bonifacio Global City",
             "streetAddressLine3": null,
             "city": "Taguig City",
             "countrySubdivisionCode": "41",

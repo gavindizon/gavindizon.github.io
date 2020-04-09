@@ -116,6 +116,7 @@ function displayStores(){
     var storeAddress2 = store.store.address.streetAddressLine2;
     var phone = store.store['phoneNumber'];
     
+
     if(storeAddress2 == null)
       storeAddress2 = ''
     if(phone == null)
@@ -181,7 +182,7 @@ function createMarker(name, address, coordinates, index, phone, time){
   <i class="fas fa-thumbtack"></i> <a href="https://maps.google.com/?q=${name}" target="_blank">${address}</a><br>
   <i class="fas fa-phone"></i> <span class="phone">${phone}</span>`;
   var icon = {
-    url: "../style/starbucks.png",
+    url: "https://i.ya-webdesign.com/images/starbucks-logo-black-and-white-png-1.png",
     scaledSize: new google.maps.Size(30, 30),
     origin: new google.maps.Point(0,0),
     anchor: new google.maps.Point(0, 0)
@@ -191,7 +192,6 @@ function createMarker(name, address, coordinates, index, phone, time){
   var marker = new google.maps.Marker({
     position: coordinates,
     map: map,
-    label: index.toString(),
     icon: icon
   });
 
