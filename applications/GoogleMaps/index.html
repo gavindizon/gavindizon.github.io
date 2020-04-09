@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <head>
+        <title>Google Maps Project</title>
+        <script src="js/index.js"></script>
+        
+        <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+
+        <div class="store-text">STORE<span>LOCATOR</span></div>
+    
+        <div class="search-container">
+            <div class="search">
+                <input type="text" id="zip-code-input" placeholder="Enter ZIP"/>
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="stores-list-container">
+            <div class="stores-list">
+                <div class="store-container">
+                    <div class="store-info">
+                        <div class="store-address">
+                        8480 Beverly Blvd
+                        <br> 
+                        Los Angeles, CA 90048
+                        </div>
+                        <div class="store-phone-number">
+                        999-222-2000
+                        </div>
+                    </div>
+                    <div class="store-circle">1</div>
+                </div>
+<hr>
+                <div class="store-container">
+                    <div class="store-info">
+                        <div class="store-address">
+                        8480 Beverly Blvd
+                        <br> 
+                        Los Angeles, CA 90048
+                        </div>
+                        <div class="store-phone-number">
+                        999-222-2000
+                        </div>
+                    </div>
+                    <div class="store-circle">2</div>
+                </div>
+<hr>
+                <div class="store-container">
+                    <div class="store-info">
+                        <div class="store-address">
+                        8480 Beverly Blvd
+                        <br> 
+                        Los Angeles, CA 90048
+                        </div>
+                        <div class="store-phone-number">
+                        999-222-2000
+                        </div>
+                    </div>
+                    <div class="store-circle">3</div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="map"></div>
+    
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcwazb-T7zvceyA4VLWVB-eXvwj-XEUIA&callback=initMap">
+    </script>
+    </body>
+</html>
