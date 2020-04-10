@@ -14,7 +14,7 @@ font-weight: bold;
 
 .vigenere{
     margin: 2em 0em;
-    padding: 2em 2em;
+    padding: 2em 1em;
     border: 2.5px solid #000;
     border-radius: 35px;
 }
@@ -30,19 +30,9 @@ button{
     margin: 8px 8px !important;
     padding: 8px 4px;
 }
-
-@media only screen and (max-width: 767px){
-    .inputs input{
-        margin: 0 auto;
-        width: 80%;
-    }
-}
-
 #result{
     margin: 0 auto !important;
-}
-#result table{
-    width: 100%;
+    padding: 2em;
 }
 #result th, #result td{
     border: 1px solid #000;
@@ -50,3 +40,21 @@ button{
     text-align:center;
     height: 20px;
 }
+@media only screen and (max-width: 767px){
+    .inputs input{
+        margin: 0 auto;
+        width: 80%;
+    }
+    section{
+        padding: 2em 2em;
+        position: relative;
+    }
+    #result{
+        padding: 0em;
+    }
+    #result th, #result td{
+        padding: 0em 0.5em;
+    
+    }    
+}
+
