@@ -1,5 +1,4 @@
 window.onload = () => {
-  displayStores();
 
 }
 
@@ -100,10 +99,52 @@ function initMap() {
       ]
     });
     infoWindow =  new google.maps.InfoWindow();
-    showStoresMarkers();
+    searchStores();
+    
 }
 
-function displayStores(){
+function searchStores(){
+  let = foundStores = [];
+  let postCode = document.getElementById('zip-code-input').value;
+
+  if(postCode){
+    for(let store of stores){
+      let postal = store['store']['address']['postalCode'];
+  
+      if(postal == postCode){
+        foundStores.push(store);
+      }
+    }
+  }else{
+    foundStores = stores;
+  }
+  clearLocations();
+  displayStores(foundStores);
+  showStoresMarkers(foundStores);
+  setOnClickListener();
+  }
+
+function clearLocations(){
+  infoWindow.close();
+  for(var i = 0; i < markers.length; i++){
+    markers[i].setMap(null);
+  }
+  markers.length = 0;
+}  
+
+function setOnClickListener(){
+  let storeElements =  document.querySelectorAll('.store-container');
+  
+  for(let [index, storeElement] of storeElements.entries()){
+      storeElement.addEventListener('mouseover',() =>{
+        
+        new google.maps.event.trigger(markers[index], 'click');        
+      });
+  }
+
+}
+
+function displayStores(stores){
   var storesHtml = '';
   var counter = 1;
   for(var [index, store] of stores.entries()){
@@ -126,7 +167,9 @@ function displayStores(){
 
     storesHtml +=`
     <div class="store-container">
-      <div class="store-info-container">    
+    <div class="store-container-bg">  
+    <div class="store-info-container">    
+        
         <div class="store-address">
           <span>${storeAddress1}</span>
           <span>${storeAddress2}</span>
@@ -138,6 +181,7 @@ function displayStores(){
         <div class="store-number-container">
           <div class="store-number">${index + 1}</div>    
       </div>
+      </div>
     </div>
     `
 
@@ -147,7 +191,7 @@ function displayStores(){
 
 }
 
-function showStoresMarkers(){
+function showStoresMarkers(stores){
   var bounds = new google.maps.LatLngBounds();
 
   for(var [index, store] of stores.entries()){

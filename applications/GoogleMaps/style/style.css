@@ -55,6 +55,9 @@ body {
 .search input:focus{
     outline: none;
 }
+.search i{
+    cursor: pointer;
+}
 .stores-list-container{
     width: 328px !important;
     position: absolute;
@@ -92,10 +95,26 @@ body {
 .store-container{
     border-bottom: 1px solid #FFF;
     display: flex;
-    padding: 0px 4px;
+    cursor: pointer;
 }
+
+
 .store-info-container{
     flex-grow: 1;
+}
+
+.store-container-bg{
+    display: flex !important;
+    flex-grow: 1;
+    border-radius: 4px;
+    padding: 4px 6px;
+    border-radius: 16px;
+    margin: 4px 0px;
+}
+
+.store-container-bg:hover{
+    background-color: #746855;
+    transition: all 0.5s ease-in-out;
 }
 .store-address{
     font-size: 16px;
@@ -128,10 +147,6 @@ body {
     justify-content: center;
 }
 
-.store-container:hover{
-    background-color: #746855;
-    border-radius: 4px;
-}
 
 div .gm-style-iw, .gm-style-iw .gm-style-iw-c, .gm-style-iw-t::after, .gm-style-iw-d {
     background: #454545 !important;
