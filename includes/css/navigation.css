@@ -49,9 +49,9 @@ nav a:hover{
 }
 #nav-list-mobile{
    display: none;
-   position: relative;
+    position: relative;
    background-color: #ddd;
-   padding-top: 5em;
+   padding-top: 0em;
    text-align: center;
 }
 #nav-list-mobile a {

@@ -2,12 +2,12 @@
 
 function myFunction() {
     var x = document.getElementById("nav-list-mobile");
-    if (x.style.display === "block") {
-    x.style.display = "none";
-    console.log("HELLO");
+    if(x.style.display === "block") {
+        x.style.display = "none";
 } else {
     x.style.display = "block";
   }
+  console.log(x.style);
 };
 
 

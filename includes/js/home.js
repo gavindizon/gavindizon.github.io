@@ -1,18 +1,25 @@
 $(document).ready(function(){
 
-    if($('.jobSLCT').val(0)){
-        //ICON CHANGE
-                    $('.jobIcon i').empty();
-                    $('.jobIcon i').addClass("fas fa-globe");
-                    $('.jobTitle h4').text("Web Developer");
-                    $('.jobDesc p').text("I am a full-stacked Web Developer");
-                }
     var welcomeTopOffset = $(".section1").offset().top;
     var introTopOffset = $(".section2").offset().top;
     var jobTopOffset = $(".section3").offset().top;
     var affilStatsTopOffset = $(".section4").offset().top;
     var socSection = $(".section5").offset().top;
-                        
+
+
+
+
+    if($('.jobSLCT').val(0)){
+        //ICON CHANGE
+            $('.jobIcon i').empty();
+            $('.jobIcon i').addClass("fas fa-globe");
+            $('.jobTitle h4').text("Web Developer");
+            $('.jobDesc p').text("I am a full-stacked Web Developer");
+         }
+
+
+
+                         
 
     $(window).scroll(function(){
         if(window.pageYOffset > introTopOffset - $(window).height() + 360){
@@ -39,20 +46,23 @@ $(document).ready(function(){
 
     $('.jobSLCT').click(function(){
         job = false;
-        
+
+        $('.jobContent').removeClass('show_job');
+        $('.jobContent').addClass('hide_job');
+
         for(i = 0; i < 3 && !job; i++){
             var idName = "#jobOpt" + i + ":checked";
             if($(idName).val() == 0)
                 job = true;
         }
         
-
         switch(i){
             case 1:
                 $('.jobIcon i').removeClass();
                 $('.jobIcon i').addClass("fas fa-globe");
                 $('.jobTitle h4').text("Web Developer");
                 $('.jobDesc p').text("I am a Full-Stacked Web Developer.");
+
                 break;
             case 2:
                 $('.jobIcon i').removeClass();
@@ -68,8 +78,17 @@ $(document).ready(function(){
                 break;
             default:
                 break;
-
         }
+
+        setTimeout(
+            function() 
+            {
+                $('.jobContent').addClass('show_job');
+                $('.jobContent').removeClass('hide_job');
+        
+            }, 50);
+
+
 
 //ICON CHANGE
 
