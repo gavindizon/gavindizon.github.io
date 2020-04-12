@@ -1,3 +1,77 @@
+
+let organization = [{
+        "name": "Developer Student Club",
+        "abbrev": "DSC Taft",
+        "description": "university based community groups for students interested in Google developer technologies",
+        "startYear": "2020",
+        "endYear": "Present",
+        "role": "Software Engineering Lead",
+        "img": "org1.png"
+    },
+    {
+        "name": "Philippine Web Designers Organization",
+        "abbrev": "PWDO",
+        "description": "a volunteer non-profit that helps nurture the local design & development community.",
+        "startYear": "2019",
+        "endYear": "Present",
+        "role": "Volunteer",
+        "img": "org0.png"
+    },
+    {
+        "name": "User Experience Philippines",
+        "abbrev": "UXPH",
+        "description": "A community of user experience & usability professionals who want to improve human experiences in Philippine society.",
+        "startYear": "2020",
+        "endYear": "Present",
+        "role": "Front-End Web Developer",
+        "img": "org2.png"
+
+    }];
+
+let html = '';    
+for(let [index, orgs] of organization.entries()){
+    
+    
+    html += `
+    <div class="affiliationCard">
+        <div class ="affCont">
+            <div class = "affImg">
+                <img src ="includes/img/${orgs.img}">
+            </div>
+            <div class="affTxt">
+                <div class ="affName">
+                    ${orgs.abbrev}
+                </div>
+                <div class ="affRole">
+                    ${orgs.role}
+                </div>
+                <div class ="affDate">
+                    ${orgs.startYear}-${orgs.endYear}
+                </div>
+            </div>
+        </div>
+        <div class="affHid">
+            <div class="affFName">
+            ${orgs.name}
+            </div>
+            <div class="affDesc">
+            ${orgs.description}
+            </div>
+        </div>
+    </div>`;
+}
+
+document.querySelector('.affiliationList').innerHTML = html;
+
+
+
+
+
+
+
+
+
+//JQUERY
 $(document).ready(function(){
 
     var welcomeTopOffset = $(".section1").offset().top;
@@ -26,14 +100,21 @@ $(document).ready(function(){
             $('.section2').removeClass('hide_content');
             $('.section2').addClass('show_content');
         }
-        if(window.pageYOffset > jobTopOffset - $(window).height() + 340){
+        if(window.pageYOffset > jobTopOffset - $(window).height() + 480){
             $('.myRoles').removeClass('hide_contentleft');
             $('.myRoles').addClass('show_contentleft');
             $('.jobLists').removeClass('hide_contentright');
             $('.jobLists').addClass('show_contentright');
-
         }    
-    
+        if(window.pageYOffset > affilStatsTopOffset - $(window).height() + 600){
+            $('.section4').removeClass('hide_content');
+            $('.section4').addClass('show_content');
+        }
+        if(window.pageYOffset > socSection - $(window).height() + 600){
+            $('.section5').removeClass('hide_content');
+            $('.section5').addClass('show_content');
+        }
+
     });
 
 

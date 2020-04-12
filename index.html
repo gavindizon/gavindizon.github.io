@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2cf142c838.js" crossorigin="anonymous"></script>
     <script src="includes/js/navigation.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 
 </head>
 <body>
@@ -21,14 +22,14 @@
     <div class ="navigation-bar">
         <div class="container">
             <nav class="d-flex justify-content-between">
-                <div>
+                <div id = "typed-strings">
                 <h2>GAVIN<span>DIZON</span></h2>
                 </div>
                 <div class="nav-links-desktop">
                     <div>
                         <ul>
                             <li><a href="#">HOME</a></li>
-                            <li><a href="#">PORTFOLIO</a></li>
+                            <li><a href="#">PROJECTS</a></li>
                             <li><a href="#">APPLICATIONS</a></li>
                         </ul>
                     </div>
@@ -53,7 +54,9 @@
     <div>
         <div class="overlay"></div>
         <div class="background"></div>
-        <div class="message"><h1>Welcome</h1></div>
+        <div class="message"><h1 id="typed"></h1></div>
+        
+
     </div>
 
 
@@ -63,7 +66,7 @@
         <div class="introduction">
             <h2>Gavin</h2>
             <h5>/ˈɡāvɪn/</h5>
-            <p>Hi, my name is Gavin and welcome to my website. I am currently an undergraduate student at De La Salle University taking up Computer Science with specialization in Software Technology. As my college program would suggest, I am passionate about anything technology-related. Things like Web Development, Artificial Intelligence, and User Experience are things that I most interested on. 
+            <p>Hi, my name is Gavin and welcome to my website. I am currently an undergraduate student at De La Salle University taking up Computer Science with specialization in Software Technology. As my college program would suggest, I am passionate about anything technology-related. Things like Web Development, Artificial Intelligence, and User Experience are things that I am most interested on. 
             I plan to post or blog about recent tech stuff. Likewise, I will also be posting my accolades and recent achievements since this site will be also serving as my portfolio. If you have any questions or suggestions for my website feel free to contact me on my social media accounts below. Since I am a UX Enthusiast, I would gladly accept any opinions. I am planning to buy an own domain name since GitHub only supports static webpages.</p>
         </div>
     </div>
@@ -102,13 +105,13 @@
         </div>
     </div>
 </section>
-<section class="section4">
+<section class="section4 hide_content">
     <div class="container">
         <div class="affiliations">
         <h2>Affiliations</h2>
         <p>I am also a member of these organizations</p>
         <div class="affiliationList">
-            <div class="affiliationCard"></div>
+            
             <div class="affiliationCard"></div>
             <div class="affiliationCard"></div>
 
@@ -116,15 +119,15 @@
         </div>    
     </div>
 </section>
-<section class="section5">
+<section class="section5 hide_content">
     <div class="container">
         <div class="socmed">
         <h2>Keep in Touch</h2>
         <p>For collaborations and other things, you can also find me here.</p>
         <div class="socList">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github-square"></i></a>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://ph.linkedin.com/in/gavin-dizon-40b08b190"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/gavindizon"><i class="fab fa-github-square"></i></a>
+            <a href="https://www.facebook.com/dizongavin"><i class="fab fa-facebook-square"></i></a>
         </div>
         </div>
     </div>
@@ -139,8 +142,14 @@
 </div>
 
 
-
-
 </body>
+<script>
+    var typed = new Typed('#typed', {
+        strings: ["Welcome to my website", "My name is Gavin."],
+        typeSpeed: 100
+
+      });
+</script>
+
 <script src="includes/js/home.js" crossorigin="anonymous"></script>
 </html>
