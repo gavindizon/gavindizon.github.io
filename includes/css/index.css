@@ -23,13 +23,12 @@
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.8);    
 }
-section{
-    padding: 0px 0 5em;
+.section1{
 }
 
 .section2{
-    margin-top: 160px;
-    padding-top: 168px;
+    margin-top: 360px;
+    padding-top: 256px;
 }
 .message{
     position: relative;
@@ -197,6 +196,11 @@ section p{
     .introduction{
         padding: 2em 0em;
     }
+    .section2{
+        margin-top: 168px;
+        padding-top: 168px;
+    }
+    
 
 }
 
@@ -308,4 +312,10 @@ margin-right: 0px;
 .affiliationCard:hover > .affHid{
     opacity: 1;
     transition: all 0.8s ease-in;
+}
+
+@media only screen and (max-width: 450px){
+    .affName{
+        font-size: 11px;
+    }
 }

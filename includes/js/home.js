@@ -1,4 +1,3 @@
-
 let organization = [{
         "name": "Developer Student Club",
         "abbrev": "DSC Taft",
