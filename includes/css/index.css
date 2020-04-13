@@ -23,7 +23,7 @@
     height: 100vh;
     width: 100%;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.92);    
+    background-color: rgba(0, 0, 0, 0.875);    
 }
 .new_section{
     margin: 0;
