@@ -17,34 +17,50 @@
     font-weight: lighter;
 }
 .overlay{
-    width: 100%;
-    height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.8);    
+    background-color: rgba(0, 0, 0, 0.92);    
 }
-.section1{
+.new_section{
+    margin: 0;
+    padding: 0;
+}
+.section1_cont{
+    height: 100vh;
+    background-image: url('../img/homeimage.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 2em 2em;
+    display: flex;
 }
 
 .section2{
-    margin-top: 360px;
-    padding-top: 256px;
+    padding: 128px 36px;
 }
 .message{
     position: relative;
     display: block;
     color: #FFF;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
     z-index: 4;
-    padding-top: 360px;
     margin: 0 auto;
-    text-align:center;
+    text-align: center;
 }
 
 .typed-cursor {
-    display: none;
+    font-size: 36px;
+    margin-top: -16px;
+    z-index: 4;
 }
 .introduction{
-    padding: 0px 2em 64px;
+    padding: 0px 2em;
 }
 
 .myRoles{
@@ -184,23 +200,13 @@ section p{
 }
 
 @media only screen and (max-width: 767px){
-    section{
-        padding: 8em 0em;
-    }
-    .section1{
-        padding: 0em 0em;
-    }
+  
     .myRoles{
         padding: 0px 2em 0px 2em !important;
     }
     .introduction{
-        padding: 2em 0em;
+    padding: 1em;
     }
-    .section2{
-        margin-top: 168px;
-        padding-top: 168px;
-    }
-    
 
 }
 
@@ -211,7 +217,15 @@ section p{
     .myRoles{
         padding: 0px 2em 0px 2em !important;
     }
-
+    .section2 p{
+        padding: 0;
+    }
+    #typed{
+        font-size: 24px;
+    }
+    .typed-cursor{
+        display: none;
+    }
 }
 
 .hide_content{
@@ -224,7 +238,7 @@ section p{
     transition: 2s;
 }
 
-.hide_contentleft{
+.hide_contentleft{ 
   opacity: 0;
   margin-left:-100px;  
 }
