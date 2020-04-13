@@ -1,12 +1,3 @@
-.background{
-    width: 100%;
-    min-height: 100%;
-    position: absolute;
-    background-image: url('../img/homeimage.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
 .introduction h2, .introduction h5{
     text-align: center;
 }
@@ -25,22 +16,31 @@
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.875);    
 }
+.background-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.875);    
+    background-image: url('../img/homeimage.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
 .new_section{
     margin: 0;
     padding: 0;
 }
 .section1_cont{
     height: 100vh;
-    position: relative;
-    background-image: url('../img/homeimage.jpg');
-    background-position: center;
-    background-size: cover;
     padding: 2em 2em;
     display: flex;
 }
 
 .section2{
-    padding: 128px 36px;
+    padding: 64px 36px;
 }
 .message{
     position: relative;
@@ -206,20 +206,29 @@ section p{
         padding: 0px 2em 0px 2em !important;
     }
     .introduction{
-    padding: 1em;
+    padding: 0em 0.5em;
     }
 
 }
 
 @media only screen and (max-width: 450px){
-    section{
-        padding: 4em 0em !important;
+    .new_section1{
+        margin-bottom: -2.5em;
     }
+    section{
+        padding: 4em 0em;
+    }
+
     .myRoles{
         padding: 0px 2em 0px 2em !important;
     }
+    .section2{
+        padding: 0;
+        margin: 0;
+    }
     .section2 p{
         padding: 0;
+        font-size: 14px;
     }
     #typed{
         font-size: 24px;
