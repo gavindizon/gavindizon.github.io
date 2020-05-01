@@ -109,7 +109,7 @@ $(document).ready(function(){
             $('.section4').removeClass('hide_content');
             $('.section4').addClass('show_content');
         }
-        if(window.pageYOffset > socSection - $(window).height() + 240){
+        if(window.pageYOffset > socSection - $(window).height()){
             $('.section5').removeClass('hide_content');
             $('.section5').addClass('show_content');
         }
