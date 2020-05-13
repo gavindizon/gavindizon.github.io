@@ -11,21 +11,24 @@ Dark Green: #28b485
 
 
 /*
-Universal Selector
+Universal Selector -Universal Reset
 */
-* {
+*, *::after, *::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
-
+html{
+    font-size: 62.5%; 
+}
 body{
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+   /* font-size: 16px;*/
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+    box-sizing: border-box;
 }
 
 .header{
@@ -33,5 +36,146 @@ body{
     background-image: linear-gradient(to right bottom,#7ed56fc2, #28b485c2), url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
+    position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*Start from top left clockwise*/
+}
+
+.header__logo-box{
+    position: absolute;
+    top: 3.6rem;
+    left: 3.6rem;
+}
+
+.header__logo{
+    height: 3.6rem;
+}
+
+.header__text-box{
+    position: absolute;
+    top: 40%; /*based from the parent element*/
+    left: 50%; /*based from the parent element*/
+    transform: translate(-50%, -50%); /*element itself*/
+    text-align: center;
+}
+
+.heading-primary{
+    color: #FFF;
+    text-transform: uppercase;
+    backface-visibility: hidden; /*part behinds in the element becomes hidden*/
+}
+
+.heading-primary--main{
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.6rem;
+    animation: moveInLeft 2.5s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary--sub{
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2.5s ease-out;
+    animation-delay: 0.2s;
+    margin-bottom: 4.8rem;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    } /*START*/
+
+    80%{
+        transform: translateX(1rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0); /*REVERT BACK*/
+    } /*FINISH*/
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    } /*START*/
+
+    80%{
+        transform: translateX(-1rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0); /*REVERT BACK*/
+    } /*FINISH*/
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+    } /*START*/
+    100%{
+        opacity: 1;
+        transform: translate(0); /*REVERT BACK*/
+    } /*FINISH*/
+}
+
+/* :link and :visited are pseudo-class*/
+.btn:link, .btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.6rem 3.6rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.btn:hover{
+    transform: translateY(-.3rem);
+/*x y blur color*/
+    box-shadow: 0 1rem 2rem rgba(0,0,0, 0.2);
+}
+
+.btn:active{
+    transform: translate(-1px);
+    box-shadow: 0 .8rem 1.6rem rgba(0,0,0, 0.2);
+}
+
+.btn--white{
+    background-color: #FFF;
+    color: #777;
+}
+.btn::after{
+    content: ""; /*should always be specified*/
+    display: inline-block; /*should be the same with base element and should also be specified*/
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+.btn--white::after{
+    background-color: white;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated{
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; /*automatically apply the 0% to the start of loading the page*/
 }
