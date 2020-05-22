@@ -1,0 +1,23 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%; /* 1rem = 10px*/
+
+}
+body{
+    box-sizing: border-box;
+    background-color: $background-primary;
+    color: $text-primary;
+    position: relative;
+   // padding: 3rem 25.6rem;
+}
+
+
+
+::selection{
+    color: $text-primary;
+    background-color: $background-primary;
+}

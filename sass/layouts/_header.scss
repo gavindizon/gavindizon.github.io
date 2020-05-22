@@ -1,0 +1,30 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 3.6rem 25.6rem;
+    background-color: $background-primary;
+    transition: box-shadow .8s;
+
+    &__spacing{
+        height: 11.52rem;
+        display: block;
+        width: inherit;
+    }
+
+    @include respond(tab-land){
+        padding: 3.6rem 12.8rem;
+    }
+    @include respond(tab-port){
+        padding: 3.6rem 6.4rem;
+    }
+    @include respond(phone-large){
+        padding: 2.4rem 3.2rem;
+    }
+    @include respond(phone-small){
+        padding: 2.4rem 1.6rem;
+    }
+
+}

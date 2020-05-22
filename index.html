@@ -3,149 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gavin Dizon</title>
-    <link rel="stylesheet" href="includes/css/index.css">
-    <link rel="stylesheet" href="includes/css/navigation.css">
-    <link rel="stylesheet" href="includes/css/footer.css">
-    
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/2cf142c838.js" crossorigin="anonymous"></script>
-    <script src="includes/js/navigation.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-
+    <title>Gavin Dizon | Home</title>
 </head>
 <body>
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item navigation__item--active"><a href="#" class="navigation__link navigation__link--active">Home</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About Me</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Portfolio</a></li>
+                </ul>
+        </nav>
+    </div>
 
-<!--NAVIGATION-->
-    <div class ="navigation-bar">
-        <div class="container">
-            <nav class="d-flex justify-content-between">
-                <div id = "typed-strings">
-                <h2>GAVIN<span>DIZON</span></h2>
+    <header class="header">
+        <h1 class="heading-primary">
+            <span class="heading-primary--main">Gavin</span>Dizon
+        </h1>
+    </header>
+    <div class="header__spacing">&nbsp;</div>
+    <main>
+        <section class="home-section">
+            <div class="home-section__img">
+                <img src="img/home.jpg" alt="Gavin Dizon" class="img-block__img">
+            </div>
+            <div class="home-section__text u-margin-bottom-med">
+                <h3 class="u-margin-top-med">/ˈɡāvɪn/</h3>
+                <p class="u-margin-top-med">Hi! My name is <strong>Gavin</strong> and welcome to my personal website. The website is still in progress so just stay tuned for updates. Currently, I am an undergraduate at De La Sallle University taking up Bachelor of Science in Computer Science. As such, I am a tech enthusiast however, I focus on Artificial Intelligence, Web Development, and User Experience. You can also find some of my works <a href="#">here</a> or download my resume. </p>
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <ul class="home-section__socmed">
+                        <li><a href="https://www.facebook.com/dizongavin"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href="https://github.com/gavindizon"><i class="fab fa-github-square"></i></a></li>
+                        <li><a href="https://ph.linkedin.com/in/gavin-dizon-40b08b190"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
-                <div class="nav-links-desktop">
-                    <div>
-                        <ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="projects/index.html">PROJECTS</a></li>
-                            <li><a href="#" style="color: grey">APPLICATIONS</a></li>
-                        </ul>
+                <div class="col-1-of-2">
+                    <div class="u-align-right"><a href="#" class="btn btn--main">Download Resume <i class="fas fa-download"></i></a>
                     </div>
                 </div>
-                <div class="nav-links-mobile">
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                </div>
-            </nav>                
-        </div>
-        <div id="nav-list-mobile">
-            <a href="#">Home</a>
-            <a href="projects/index.html">Projects</a>
-            <a href="#" style="color: grey">Applications</a>
-        </div>
-
-    </div>
-    
-<!--BODY-->
-<section class="new_section1">
-    <div class="section1_cont d-flex justify-content-between">
-        <div class="overlay"></div>
-        <div class="background-img"></div>
-        <div class="message"><h1 id="typed"></h1></div>
-    </div>
-</section>
-<section class="section2 hide_content">
-    <div class="container">
-        <div class="introduction">
-            <h2>Gavin</h2>
-            <h5>/ˈɡāvɪn/</h5>
-            <p>Hi, my name is Gavin and welcome to my website. I am currently an undergraduate student at De La Salle University taking up Computer Science with specialization in Software Technology. As my college program would suggest, I am passionate about anything technology-related. Things like Web Development, Artificial Intelligence, and User Experience are things that I am most interested on. 
-            I plan to post or blog about recent tech stuff. Likewise, I will also be posting my accolades and recent achievements since this site will be also serving as my portfolio. If you have any questions or suggestions for my website feel free to contact me on my social media accounts below. Since I am a UX Enthusiast, I would gladly accept any opinions. I am planning to buy an own domain name since GitHub only supports static webpages.</p>
-        </div>
-    </div>
-</section>
-<section class="section3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 myRoles hide_contentleft">
-                <h2>What I do?</h2>
-                <p>Here are some things I do.</p>
             </div>
-            <div class="col-md-6 col-sm-12 jobLists hide_contentright">
-                <div class="jobCards">
-                    <div class="jobContent">
-                        <div class="jobIcon"><i class="fas fa-globe"></i></div>
-                        <div class="jobTitle"><h4>Job Title</h4></div>
-                        <div class="jobDesc"><p>This is a short description.</p></div>
-                    </div>
-                </div>
-                <div class="jobSelection">
-                    <label class="inputContainer">
-                        <input type="radio" class="jobSLCT" id ="jobOpt0" name="jobSelect" value=0 checked>
-                        <span class="customRadio"></span>
-                    </label>
-                    <label class="inputContainer">
-                        <input type="radio" class="jobSLCT" id ="jobOpt1" name="jobSelect" value=1>
-                        <span class="customRadio"></span>
-                    </label>
-                    <label class="inputContainer">
-                        <input type="radio" class="jobSLCT" id ="jobOpt2" name="jobSelect" value=2>
-                        <span class="customRadio"></span>
-                    </label>
-
-                </div>
-            </div>
+        </section>
+    </main>
+    <footer class="u-margin-top-med">
+        <div class="footer">
+            <h5>All Rights Reserved &copy; 2020 Gavin Raine R. Dizon</h5>
         </div>
-    </div>
-</section>
-<section class="section4 hide_content">
-    <div class="container">
-        <div class="affiliations">
-        <h2>Affiliations</h2>
-        <p>I am also a member of these organizations</p>
-        <div class="affiliationList">
-            
-            <div class="affiliationCard"></div>
-            <div class="affiliationCard"></div>
-
-        </div>
-        </div>    
-    </div>
-</section>
-<section class="section5 hide_content">
-    <div class="container">
-        <div class="socmed">
-        <h2>Keep in Touch</h2>
-        <p>For collaborations and other things, you can also find me here.</p>
-        <div class="socList">
-            <a href="https://ph.linkedin.com/in/gavin-dizon-40b08b190"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/gavindizon"><i class="fab fa-github-square"></i></a>
-            <a href="https://www.facebook.com/dizongavin"><i class="fab fa-facebook-square"></i></a>
-        </div>
-        </div>
-    </div>
-</section>
-
-
-<!--FOOTER-->
-<div class="footer">
-    <div class="container">
-        <p>All Rights Reserved 2020</p>
-    </div>
-</div>
-
-
-</body>
+    </footer>
 <script>
-    var typed = new Typed('#typed', {
-        strings: ["Welcome to my website.", "My name is Gavin.", "Scroll down to know more about what I do.", ""],
-        typeSpeed: 120
-
-      });
+    window.onscroll = (e) =>{
+        if((window.scrollY) > 0){
+            document.querySelector('.header').style = "box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.8);"
+        }else{
+            document.querySelector('.header').style = "box-shadow: 0;"
+        }
+    }
 </script>
+</body>
 
-<script src="includes/js/home.js"></script>
 </html>
