@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/gavindizon/gavindizon.github.io/issues"
   },
-  "homepage": "https://github.com/gavindizon/gavindizon.github.io#readme"
+  "homepage": "https://github.com/gavindizon/gavindizon.github.io#readme",
+  "dependencies": {
+    "segoe-fonts": "^1.0.1"
+  }
 }
