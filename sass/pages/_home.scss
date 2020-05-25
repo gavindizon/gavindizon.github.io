@@ -1,6 +1,7 @@
 .home-section{
+
     padding: 3rem 25.6rem;
-    height: auto;
+    height: 75vh;
     @include respond(tab-land){
         padding: 3rem 12.8rem;
     }

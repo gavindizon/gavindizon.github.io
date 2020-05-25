@@ -6,12 +6,17 @@
 html{
     font-size: 62.5%; /* 1rem = 10px*/
 
+    @include respond(big-desktop){
+        font-size:87%;
+    }
+
 }
 body{
     box-sizing: border-box;
     background-color: $background-primary;
     color: $text-primary;
     position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    // padding: 3rem 25.6rem;
 }
 

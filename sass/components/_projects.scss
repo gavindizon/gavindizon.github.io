@@ -1,0 +1,82 @@
+.project-field{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding: 3.6rem;
+    &__img &__visit-text{
+        text-align: center;
+        transform: translateX(50%);
+        opacity: 0;
+        visibility: hidden;        
+        pointer-events:none;
+        position: absolute;
+        font-weight: 300;
+        cursor: pointer;
+        font-size: 2.4rem;
+        top: 40%;
+        right: 50%;
+        z-index: 9;
+
+    }
+    &__img{
+        width: 75%;
+        display: inline-block;
+        overflow: hidden;
+        border-radius: .4rem;
+        backface-visibility: hidden;
+        transition: all .8s;        
+        
+        @include respond(phone-large){
+            width: 100%;
+        }
+    
+
+        & img:hover{
+            transform: scale(1.1);
+            filter: brightness(20%);
+        }
+        &:hover > .project-field__visit-text{
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+
+         a {
+            img{
+                position: relative;
+                text-align: center;
+                overflow: hidden;
+                width: 100%;
+                height: auto;
+                transition: all .8s;
+                transform: scale(1);
+            }    
+         }
+    }
+    &__heading{
+        display:block;
+        color: $text-secondary !important;
+        font-size: 2.4rem;
+        width: auto;
+        padding: 1.6rem 1.6rem 0rem;
+        text-align: center;
+        
+    }
+    &__role{
+        font-size: 1.2rem;
+        padding-left: 1.6rem;
+        padding-top: 1.6rem;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    &__desc{
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-bottom: 3.6rem;
+    }
+
+
+}
