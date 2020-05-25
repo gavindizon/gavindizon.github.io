@@ -1,0 +1,65 @@
+.btn{
+    &, &:link, &:visited{
+        font-size: 1.6rem;
+        color: $text-secondary;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        padding: 1.6rem 3.6rem;
+        border-radius: 6.4rem;
+        background-color: $background-secondary;
+        border: none;
+        cursor:pointer;
+        transition: all .4s;
+
+        @include respond(btn-brkpoint){
+            margin-top: .8rem;
+            padding: 1.2rem 2.4rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    & i{
+        margin-left: 1rem;
+    }
+    &:hover{
+        transform: translateY(-.3rem);
+        /*x y blur color*/
+            box-shadow: 0 1rem 2rem rgba(0,0,0, 0.2);
+
+            &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+            }
+        }
+
+    &:active, &:focus{
+        transform: translate(-1px);
+        box-shadow: 0 .8rem 1.6rem rgba(0,0,0, 0.2);
+    }
+
+    &::after{
+        content: ""; /*should always be specified*/
+        display: inline-block; /*should be the same with base element and should also be specified*/
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--main{
+        background-color: $background-secondary;
+        color: $text-secondary;
+
+        &::after{
+            background-color: $background-secondary;
+        }
+    }
+
+
+}   

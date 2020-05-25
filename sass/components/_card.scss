@@ -1,0 +1,68 @@
+.card{
+    width: 100%;
+    height: auto;
+    border: .2rem solid $text-primary;
+    border-radius: .4rem;
+    padding: 3.2rem .8rem;
+    height: 300px;
+    margin-bottom: 4.8rem;
+
+    @include respond(big-desktop){
+        height: 400px;
+    }
+
+    @include respond(tab-land){
+        width: 35%;
+        margin: 4.8rem auto;
+    }
+
+    @include respond(tab-port){
+        width: 50%;
+    }
+
+    @include respond(phone-large){
+        width: 70%;
+    }
+
+    @include respond(phone-small){
+        width: 80%;
+    }
+
+    &__logo{
+        height:6.4rem;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
+    &__title{
+        margin-top: 1.6rem;
+        text-align: center;
+        span{
+            font-size: 1.6rem;
+            display: block;
+            width: 100%;
+        }
+
+        &--acronym a{
+            color: $text-primary;
+        }
+
+    }
+    &__info{
+        
+        span{
+            display: block;
+        }
+        &--org{
+            text-align: center;
+            font-weight: 400;
+            font-size: 1.4rem;
+
+        }
+        &--desc{
+            font-size: 1.3rem;
+            font-weight: 300;
+            hyphens: auto;
+        }
+    }
+}
