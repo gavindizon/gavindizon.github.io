@@ -289,7 +289,8 @@ body {
     position: relative; }
     @media only screen and (max-width: 56.25em) {
       .row .col-1-of-2 {
-        width: 100%; } }
+        width: 100%;
+        margin-bottom: 1.6rem; } }
   .row .col-1-of-3 {
     width: calc((100% - 6rem*2) /3); }
     @media only screen and (max-width: 75em) {
@@ -573,7 +574,7 @@ footer {
 
 .home-section {
   padding: 3rem 25.6rem;
-  height: 75%; }
+  height: auto; }
   @media only screen and (max-width: 75em) {
     .home-section {
       padding: 3rem 12.8rem; } }
