@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/2cf142c838.js" crossorigin="anonymous"></script>
+    <title>Gavin Dizon | About</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+</head>
+<body class="about-body">
+    <div class="navigation">
+        <input type="checkbox" name="" id="navi-toggle" class="navigation__checkbox">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="../index.html" class="navigation__link">Home</a></li>
+                <li class="navigation__item navigation__item--active"><a href="#" class="navigation__link navigation__link--active">About Me</a></li>
+                <li class="navigation__item"><a href="../projects/index.html" class="navigation__link">Portfolio</a></li>
+                </ul>
+        </nav>
+    </div>
+
+    <header class="header">
+        <h1 class="heading-primary">
+            <span class="heading-primary--main">Gavin</span>Dizon
+        </h1>
+    </header>
+    <div class="header__spacing">&nbsp;</div>
+    <main>
+        <section class="about-intro">
+            <div class="">
+                <h2 class="about__heading about__heading--top">I am a</h2>
+                <h2 id="typed" class="about__heading about__heading--bottom">&nbsp;</h2>
+            </div>
+        </section>
+        <section class="about-process">
+            <h2 class="u-margin-bottom-med heading-main-about">Design Process</h2>
+            <div class="steps">
+                <h3 class="steps__header">1. Research and Discover</h3>
+                <p class="steps__info">I look for similar products both in the digital and the non-digital spaces and compare it to each other. I study their features and how they are unique. If possible, I also look for the customers' review so that I can get a glimpse on their preferences.</p>
+            </div>
+            <div class="steps">
+                <h3 class="steps__header">2. Ideate</h3>
+                <p class="steps__info">I make use of affinity mapping to organize the ideas that I collected. With this, I make a rough prototype of the product using Figma or Lunacy.</p>
+            </div>
+            <div class="steps">
+                <h3 class="steps__header">3. Kickoff</h3>
+                <p class="steps__info">I deliver insights to the client by summarizing the details of the affinity mapping I made and show them the prototype. This is necessary to see their expectation towards the product.</p>
+            </div>
+            <div class="steps">
+                <h3 class="steps__header">4. Develop</h3>
+                <p class="steps__info">After analyzing and organizing the ideas from the kickoff meeting, I start developing the product. I base the development from a refined version of the prototype I made.</p>
+            </div>
+            <div class="steps">
+                <h3 class="steps__header">5. Repeat</h3>
+                <p class="steps__info">I let clients and their possible customers test the product to see what should be improved on. If there is a need for improvement, I repeat the process.</p>
+            </div>
+        </section>
+        <section class="about-affiliate">
+            <h2 class="u-margin-bottom-med heading-main-about u-margin-top-med">Affiliations</h2>
+            <div class="list">
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="u-margin-top-med">
+        <div class="footer">
+            <h5>All Rights Reserved &copy; 2020 Gavin Raine R. Dizon</h5>
+        </div>
+    </footer>
+</body>
+<script>
+    let typed = new Typed('#typed', {
+        strings: ["developer", "designer", "student", "UX enthusiast", "tech community member", "freelancer"],
+        typeSpeed: 120,
+        shuffle: true,
+        loop: true,
+        backDelay: 2000, 
+        backSpeed: 10
+      });
+</script>
+<script>
+    let organization = [{
+        "name": "Developer Student Club",
+        "abbrev": "DSC Taft",
+        "description": "A university-based community group for students interested in Google developer technologies in De La Salle University.",
+        "startYear": "2020",
+        "endYear": "Present",
+        "role": "Software Engineering Lead",
+        "img": "org1.png"
+    },
+    {
+        "name": "Philippine Web Designers Organization",
+        "abbrev": "PWDO",
+        "description": "A volunteer non-profit organization that helps nurture the local design & development community.",
+        "startYear": "2019",
+        "endYear": "Present",
+        "role": "Volunteer",
+        "img": "org0.png"
+    },
+    {
+        "name": "User Experience Philippines",
+        "abbrev": "UXPH",
+        "description": "A community of user experience & usability professionals who want to improve human experiences in Philippine society.",
+        "startYear": "2020",
+        "endYear": "Present",
+        "role": "Front-End Web Developer",
+        "img": "org2.png"
+
+    }];
+
+let html = '';
+let rowOpener = '';
+let rowCloser = '';
+for(let [index, orgs] of organization.entries()){
+
+    if(index == 0)
+        rowOpener = "<div class=\"row\">";
+    else
+        rowOpener = '';
+    if(index ==2)
+        rowCloser = '</div>';
+    else
+        rowCloser ='';
+
+    html+=`
+    ${rowOpener}
+    <div class="col-1-of-3">
+        <div class="card"> 
+
+            <img src="../img/${orgs.img}" alt="Org Photo ${index}" class="card__logo">
+            <div class="card__title">
+                <span class="card__title--position">${orgs.role}</span>
+                <span class="card__title--acronym">@<a href="#">${orgs.abbrev}</a></span>
+            </div>
+            <div class="card__info"><p class="u-margin-top-small">
+                <span class="card__info--org">${orgs.name}</span>
+                <span class="card__info--desc ">${orgs.description}</span></p>
+            </div>
+        </div>
+    </div>
+    ${rowCloser}`;
+}
+
+document.querySelector('.list').innerHTML = html;
+//${orgs.startYear}-${orgs.endYear}
+</script>
+<script src="../js/index.js"></script>
+</html>

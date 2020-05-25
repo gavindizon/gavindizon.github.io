@@ -5,6 +5,13 @@
         margin-top: 1.6rem !important;
     }
 }
+.u-margin-top-small{
+    margin-top: 1.6rem !important; 
+    
+    @include respond(phone-large){
+        margin-top: 0.8rem !important;
+    }
+}
 .u-align-right{
     position: absolute; 
     right: 0%;
