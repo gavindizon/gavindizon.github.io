@@ -29,4 +29,15 @@
         text-align: center;
     }
 }
-.u-margin-bottom-med{margin-bottom: 3.6rem !important; @include respond(phone-large){margin-bottom: 1.2rem !important;}}
+.u-margin-bottom-med{
+    margin-bottom: 3.6rem !important; 
+
+    &--card{
+        @include respond(desktop){
+            margin-bottom: 1.6rem !important;
+        }
+    }
+    @include respond(phone-large){
+        margin-bottom: 1.2rem !important;
+    }
+}

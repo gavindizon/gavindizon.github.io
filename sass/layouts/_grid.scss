@@ -4,6 +4,10 @@
 
     &:not(:last-child){
         margin-bottom: $gutter-vertical;
+
+        @include respond(tab-land){
+            margin-bottom: 0;
+        }
     }
 
     @include clearfix;
@@ -16,7 +20,7 @@
 
         }
     }
-
+    
     .col-1-of-2{
         width: calc((100% - #{$gutter-horizontal}) /2);
         position: relative;
@@ -33,7 +37,11 @@
 
         @include respond(tab-land){
             width: 100%;
+    
         }
+
+    
+
 
     }
 
@@ -42,7 +50,7 @@
     }
 
     .col-1-of-4{
-        width: calc((100% - #{$gutter-horizontal}*3) /4);
+        width: calc((100% - #{$gutter-horizontal}*3) / 4);
     }
     .col-2-of-4{
         width: calc(2* ((100% - #{$gutter-horizontal}*3) /4) + #{$gutter-horizontal});
