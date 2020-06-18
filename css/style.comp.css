@@ -81,6 +81,9 @@ body {
 
 .u-margin-bottom-med {
   margin-bottom: 3.6rem !important; }
+  @media only screen and (max-width: 90em) {
+    .u-margin-bottom-med--card {
+      margin-bottom: 1.6rem !important; } }
   @media only screen and (max-width: 37.5em) {
     .u-margin-bottom-med {
       margin-bottom: 1.2rem !important; } }
@@ -188,6 +191,41 @@ body {
     font-weight: 300;
     hyphens: auto; }
 
+.card-dark {
+  background: linear-gradient(to bottom right, rgba(38, 38, 38, 0.98) 0%, rgba(38, 38, 38, 0.98) 50%, rgba(38, 38, 38, 0.95) 50%, rgba(38, 38, 38, 0.95) 100%);
+  width: 90%;
+  border-radius: .4rem;
+  box-shadow: 1px 4px 4px rgba(38, 38, 38, 0.2);
+  transition: all .4s linear;
+  backface-visibility: hidden;
+  color: #FFF;
+  padding: 2.4rem 2.4rem;
+  text-align: center;
+  height: 30rem; }
+  .card-dark i {
+    font-size: 4.8rem; }
+  .card-dark h3 {
+    text-transform: unset !important;
+    font-size: 1.8rem; }
+  .card-dark p {
+    font-size: 1.4rem;
+    font-weight: 200; }
+  .card-dark:hover {
+    transform: translateY(-4px);
+    box-shadow: 1px 6px 6px rgba(38, 38, 38, 0.4); }
+  @media only screen and (max-width: 90em) {
+    .card-dark {
+      width: 100%; } }
+  @media only screen and (max-width: 75em) {
+    .card-dark {
+      width: 32rem;
+      margin: 0rem auto 3.2rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .card-dark {
+      width: 32rem;
+      margin: 0rem auto 3.2rem;
+      height: 24rem; } }
+
 .project-field {
   width: 100%;
   margin: 0 auto;
@@ -275,7 +313,10 @@ body {
   max-width: 114rem;
   margin: 0 auto; }
   .row:not(:last-child) {
-    margin-bottom: 8rem; }
+    margin-bottom: 3.6rem; }
+    @media only screen and (max-width: 75em) {
+      .row:not(:last-child) {
+        margin-bottom: 0; } }
   .row::after {
     content: "";
     display: table;
@@ -283,27 +324,27 @@ body {
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 6rem; }
+      margin-right: 4.8rem; }
   .row .col-1-of-2 {
-    width: calc((100% - 6rem) /2);
+    width: calc((100% - 4.8rem) /2);
     position: relative; }
     @media only screen and (max-width: 56.25em) {
       .row .col-1-of-2 {
         width: 100%;
         margin-bottom: 1.6rem; } }
   .row .col-1-of-3 {
-    width: calc((100% - 6rem*2) /3); }
+    width: calc((100% - 4.8rem*2) /3); }
     @media only screen and (max-width: 75em) {
       .row .col-1-of-3 {
         width: 100%; } }
   .row .col-2-of-3 {
-    width: calc((2* (100% - 6rem * 2) /3) + 6rem); }
+    width: calc((2* (100% - 4.8rem * 2) /3) + 4.8rem); }
   .row .col-1-of-4 {
-    width: calc((100% - 6rem*3) /4); }
+    width: calc((100% - 4.8rem*3) / 4); }
   .row .col-2-of-4 {
-    width: calc(2* ((100% - 6rem*3) /4) + 6rem); }
+    width: calc(2* ((100% - 4.8rem*3) /4) + 4.8rem); }
   .row .col-3-of-4 {
-    width: calc(3 * ((100% - 6rem*3) / 4) + (2 * 6rem)); }
+    width: calc(3 * ((100% - 4.8rem*3) / 4) + (2 * 4.8rem)); }
 
 .header {
   position: fixed;
