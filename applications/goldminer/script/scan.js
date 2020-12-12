@@ -64,6 +64,11 @@ function initiateSpecSearch() {
 
     for (let i = 0; i < validMoves.length; i++) {
       evaluate[validMoves[i]] = 1;
+
+      //VISITED
+      if (grid[currYPos][currXPos].movement[validMoves[i]].visited)
+        evaluate[validMoves[i]] = -1;
+
       switch (scannedTiles[validMoves[i]]) {
         case "p": // pit
           evaluate[validMoves[i]] *= 2;
@@ -165,6 +170,9 @@ function initiateSpecSearch() {
 
           for (let i = 0; i < validMoves.length; i++) {
             evaluate[validMoves[i]] = 1;
+            if (grid[currYPos][currXPos].movement[validMoves[i]].visited)
+              evaluate[validMoves[i]] = -1;
+
             switch (scannedTiles[validMoves[i]]) {
               case "p": // pit
                 evaluate[validMoves[i]] *= 2;
