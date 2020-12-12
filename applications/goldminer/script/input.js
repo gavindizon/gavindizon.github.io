@@ -136,6 +136,7 @@ function reset() {
   goalX = n - 1;
   goalY = n - 1;
   moveCnt = 0;
+  rotateCnt = 0;
   if (findGoal()[2] === 1) {
     console.log("REMOVEEE");
     randBtn.removeAttribute("disabled");

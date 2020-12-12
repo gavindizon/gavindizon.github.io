@@ -31,6 +31,7 @@ function initiateSpecSearch() {
   let scannedTiles = [null, null, null, null];
   let direction;
   let delayer = 0;
+  let specialItem = false;
   addMove(`Scanning at (${currXPos + 1}, ${currYPos + 1})`);
   for (let i = 2; i < 6; i++) {
     setTimeout(function () {
