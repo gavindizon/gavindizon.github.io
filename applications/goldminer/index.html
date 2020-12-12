@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP 1 | Miner</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        height: 100%;
+        overflow: hidden;
+        background-color: #101010;
+        color: #fff;
+      }
+      button {
+        background-color: #101010;
+        border: 2px solid #fff;
+        color: white;
+        padding: 2px 4px;
+
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        transition-duration: 0.4s;
+      }
+      button:disabled {
+        opacity: 0.5;
+        background-color: white;
+        color: #101010;
+      }
+      .btn-1 {
+        padding: 8px 4px;
+      }
+      button:hover:enabled {
+        background-color: #fff;
+        color: #101010;
+        border: 2px solid #101010;
+      }
+      .credits {
+        position: fixed;
+        bottom: 0;
+        right: 50%;
+      }
+      .link{
+        color: #FFF;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: all 0.8s;
+      }
+      .link:hover{
+        opacity: 1;
+      }
+    </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"
+      integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA=="
+      crossorigin="anonymous"
+    ></script>
+    <!--<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"
+      integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA=="
+      crossorigin="anonymous"
+    ></script>!-->
+    <script src="script/tile.js"></script>
+    <script src="script/index.js"></script>
+    <script src="script/helper.js"></script>
+    <script src="script/board.js"></script>
+    <script src="script/random.js"></script>
+    <script src="script/smart.js"></script>
+    <script src="script/scan.js"></script>
+
+    <script src="script/input.js"></script>
+    <script src="script/console.js"></script>
+  </head>
+  <body>
+    <main>
+      <p class="credits">Made by <a class="link" href="https://gavindizon.github.io">Gavin Dizon</a> and <a class="link"href="https://github.com/rileyuy">Riley Uy</p>
+    </main>
+  </body>
+</html>
