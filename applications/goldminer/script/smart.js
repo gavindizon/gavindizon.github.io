@@ -28,13 +28,13 @@ function scanFront(direction) {
     switch (tile.movement[direction].type) {
       case 0:
         points += 1000000;
-        return 0;
+        return "g";
       case 1:
         points += 10000;
-        return 1;
+        return "b";
       case 2:
         points += -5000;
-        return 2;
+        return "p";
     }
   if (scannedDistance === 0 && tile.movement[direction] === null) {
     points -= 1000000;
@@ -46,7 +46,7 @@ function scanFront(direction) {
     tile.movement[direction] !== 2
   ) {
     points -= 900000;
-    return 2;
+    return "p";
   }
   points -= 2500;
   return null;
@@ -134,6 +134,9 @@ function initiateSmartSearch() {
   let direction;
   let ogPrevious = -1;
   let delayer = 0;
+  randBtn.attribute("disabled", "");
+  smartBtn.attribute("disabled", "");
+  specBtn.attribute("disabled", "");
 
   if (onPit() || onGoal()) {
     idle = true;
@@ -172,15 +175,15 @@ function initiateSmartSearch() {
         //if encounters beacon
       }
 
-      if (scannedTiles.includes(1)) {
+      if (scannedTiles.includes("b")) {
         console.log("BEACON");
-        direction = scannedTiles.indexOf(1);
+        direction = scannedTiles.indexOf("b");
         specialItem = true;
       }
 
       // or goal
-      if (scannedTiles.includes(0)) {
-        direction = scannedTiles.indexOf(0);
+      if (scannedTiles.includes("g")) {
+        direction = scannedTiles.indexOf("g");
         specialItem = true;
       }
 
@@ -271,15 +274,15 @@ function initiateSmartSearch() {
             //if encounters beacon
           }
 
-          if (scannedTiles.includes(1)) {
+          if (scannedTiles.includes("b")) {
             console.log("BEACON");
-            direction = scannedTiles.indexOf(1);
+            direction = scannedTiles.indexOf("b");
             specialItem = true;
           }
 
           // or goal
-          if (scannedTiles.includes(0)) {
-            direction = scannedTiles.indexOf(0);
+          if (scannedTiles.includes("g")) {
+            direction = scannedTiles.indexOf("g");
             specialItem = true;
           }
 

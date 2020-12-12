@@ -1,4 +1,8 @@
 function initiateRandomSearch() {
+  randBtn.attribute("disabled", "");
+  smartBtn.attribute("disabled", "");
+  specBtn.attribute("disabled", "");
+
   idle = false;
   draw();
   //console.log(grid);

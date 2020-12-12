@@ -58,7 +58,7 @@ function initUserInput() {
 
   textFont("Arial");
   resetBtn = createButton("RESET");
-  resetBtn.position(970, 5);
+  resetBtn.position(985, 5);
   resetBtn.mousePressed(reset);
   resetBtn.addClass("btn-1");
 
@@ -69,9 +69,15 @@ function initUserInput() {
   smartBtn.addClass("btn-1");
   smartBtn.attribute("disabled", "");
 
+  specBtn = createButton("STOCH");
+  specBtn.position(867.5, 5);
+  specBtn.mousePressed(initiateSpecSearch);
+  specBtn.addClass("btn-1");
+  specBtn.attribute("disabled", "");
+
   //Random Button
   randBtn = createButton("RANDOM");
-  randBtn.position(885, 5);
+  randBtn.position(920, 5);
   randBtn.mousePressed(initiateRandomSearch);
   randBtn.addClass("btn-1");
   randBtn.attribute("disabled", "");
@@ -130,9 +136,12 @@ function reset() {
   goalX = n - 1;
   goalY = n - 1;
   moveCnt = 0;
-  clear();
-
-  text(moveCnt.toString(), moveCountHeading.x + 120, moveCountHeading.y + 35);
+  if (findGoal()[2] === 1) {
+    console.log("REMOVEEE");
+    randBtn.removeAttribute("disabled");
+    smartBtn.removeAttribute("disabled");
+    specBtn.removeAttribute("disabled");
+  }
 
   for (var i = 0; i < n; i++) {
     for (var j = 0; j < n; j++) {
@@ -140,6 +149,7 @@ function reset() {
       if (i !== 0 && j !== 0) grid[i][j].player = false;
     }
   }
+  clear();
   draw();
 }
 
@@ -179,14 +189,26 @@ function place(i, j, type) {
         console.log("Goal set!");
         randBtn.removeAttribute("disabled");
         smartBtn.removeAttribute("disabled");
+        specBtn.removeAttribute("disabled");
       }
       grid[i][j].setType(0);
       break;
     case "Beacon":
       grid[i][j].setType(1);
+      if (findGoal()[2] === 0) {
+        randBtn.attribute("disabled", "");
+        smartBtn.attribute("disabled", "");
+        specBtn.attribute("disabled", "");
+      }
       break;
     case "Pit Tile":
       grid[i][j].setType(2);
+
+      if (findGoal()[2] === 0) {
+        randBtn.attribute("disabled", "");
+        smartBtn.attribute("disabled", "");
+        specBtn.attribute("disabled", "");
+      }
       break;
     case "Reg. Tile":
       if (grid[i][j].type === 0) {
@@ -196,7 +218,7 @@ function place(i, j, type) {
         else {
           randBtn.attribute("disabled", "");
           smartBtn.attribute("disabled", "");
-
+          specBtn.attribute("disabled", "");
           grid[i][j].setType(3);
         }
       } else grid[i][j].setType(3);
