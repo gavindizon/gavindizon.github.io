@@ -27,10 +27,13 @@ function scanFront(direction) {
   if (tile.movement[direction] !== null)
     switch (tile.movement[direction].type) {
       case 0:
+        unvisitedExists[direction] = 1;
         points += 1000000;
         return "g";
       case 1:
         points += 10000;
+        unvisitedExists[direction] = 1;
+
         return "b";
       case 2:
         points += -5000;

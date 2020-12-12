@@ -4,6 +4,63 @@ Number.prototype.between = function (a, b) {
   return this > min && this < max;
 };
 
+function inBetween(tile) {
+  let xAxis = [];
+  let yAxis = [];
+  let temp = tile;
+
+  for (let i = 0; i < 4; i++) {
+    while (tile.movement[i] !== null) {
+      if (tile.movement[i].type === 1 || tile.movement[i].type === 0)
+        i % 2 === 0
+          ? xAxis.push(tile.movement[i].type)
+          : yAxis.push(tile.movement[i].type);
+      tile = tile.movement[i];
+    }
+    tile = temp;
+  }
+
+  if (
+    (xAxis.includes(0) && xAxis.includes(1)) ||
+    (yAxis.includes(0) && yAxis.includes(1))
+  )
+    return 0;
+
+  return 1;
+}
+
+function sameAxis(tile) {
+  let temp = tile;
+
+  for (let i = 0; i < 4; i++) {
+    while (tile.movement[i] !== null) {
+      if (tile.movement[i].type === 2) break;
+      if (tile.movement[i].type === 0) return 1;
+      tile = tile.movement[i];
+    }
+    tile = temp;
+  }
+
+  return 0;
+}
+
+function removeBeacons(tile) {
+  let temp = tile;
+
+  for (let i = 0; i < 4; i++) {
+    while (tile !== null) {
+      if (tile.type === 1) {
+        tile.setType(3);
+        //console.log("X");
+      }
+      tile = tile.movement[i];
+    }
+    tile = temp;
+  }
+
+  return 0;
+}
+
 function initSideMenu() {
   fill("#101010");
   strokeWeight(4);
@@ -128,6 +185,8 @@ function changeRow() {
 
 function reset() {
   grid[currYPos][currXPos].visited = false;
+  grid[currYPos][currXPos].player = false;
+
   currYPos = 0;
   currXPos = 0;
   grid[currYPos][currXPos].player = true;
@@ -186,6 +245,7 @@ function place(i, j, type) {
         goalCoords[2] == 1
       ) {
         grid[goalCoords[0]][goalCoords[1]].setType(3);
+        removeBeacons(grid[goalCoords[0]][goalCoords[1]]);
       } else {
         console.log("Goal set!");
         randBtn.removeAttribute("disabled");
@@ -195,20 +255,30 @@ function place(i, j, type) {
       grid[i][j].setType(0);
       break;
     case "Beacon":
-      grid[i][j].setType(1);
-      if (findGoal()[2] === 0) {
-        randBtn.attribute("disabled", "");
-        smartBtn.attribute("disabled", "");
-        specBtn.attribute("disabled", "");
+      if (sameAxis(grid[i][j]) === 1) {
+        grid[i][j].setType(1);
+        if (findGoal()[2] === 0) {
+          randBtn.attribute("disabled", "");
+          smartBtn.attribute("disabled", "");
+          specBtn.attribute("disabled", "");
+        }
+      } else {
+        addMove(`Goal not found on the Axis`);
+        draw();
       }
       break;
     case "Pit Tile":
-      grid[i][j].setType(2);
+      if (inBetween(grid[i][j])) {
+        grid[i][j].setType(2);
 
-      if (findGoal()[2] === 0) {
-        randBtn.attribute("disabled", "");
-        smartBtn.attribute("disabled", "");
-        specBtn.attribute("disabled", "");
+        if (findGoal()[2] === 0) {
+          randBtn.attribute("disabled", "");
+          smartBtn.attribute("disabled", "");
+          specBtn.attribute("disabled", "");
+        }
+      } else {
+        addMove(`INVALID: PIT should not be between`);
+        draw();
       }
       break;
     case "Reg. Tile":
