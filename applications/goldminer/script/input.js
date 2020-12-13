@@ -11,15 +11,17 @@ function inBetween(tile) {
 
   for (let i = 0; i < 4; i++) {
     while (tile.movement[i] !== null) {
-      if (tile.movement[i].type === 1 || tile.movement[i].type === 0)
+      if (tile.movement[i].type === 1 || tile.movement[i].type === 0) {
         i % 2 === 0
           ? xAxis.push(tile.movement[i].type)
           : yAxis.push(tile.movement[i].type);
+        break;
+      }
       tile = tile.movement[i];
     }
     tile = temp;
   }
-
+  console.info(xAxis, yAxis);
   if (
     (xAxis.includes(0) && xAxis.includes(1)) ||
     (yAxis.includes(0) && yAxis.includes(1))
@@ -178,6 +180,9 @@ function changeRow() {
   n = parseInt(newSize.value());
   goalX = n - 1;
   goalY = n - 1;
+  randBtn.attribute("disabled", "");
+  smartBtn.attribute("disabled", "");
+  specBtn.attribute("disabled", "");
 
   initBoard();
   draw();
