@@ -1,0 +1,137 @@
+body {
+  margin: 0px;
+  font-family: "Lato", sans-serif;
+  background-color: rgb(246, 246, 246);
+  display: flex;
+  justify-content: center;
+}
+
+.gallery {
+  width: 430px;
+  margin-top: 60px;
+}
+
+header {
+  background-color: white;
+  border: 1px solid rgb(214, 214, 214);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 430px;
+  height: 210px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(112, 212, 201);
+  font-size: 40px;
+  font-weight: 400;
+
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.header-pointers {
+  display: flex;
+  flex-direction: column;
+}
+
+.grey-line {
+  background-image: url("images/spritesheet.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  zoom: 70%;
+  width: 550px;
+  height: 4px;
+  align-self: center;
+}
+
+.arrow {
+  background-image: url("images/spritesheet.png");
+  background-position: 0px -10px;
+  background-repeat: no-repeat;
+  zoom: 70%;
+  width: 32px;
+  height: 16px;
+  margin-left: 70px;
+}
+.header-thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.thumbnails {
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 3px solid rgb(162, 222, 216);
+  background-repeat: no-repeat;
+  zoom: 80%;
+  width: 83px;
+  height: 83px;
+}
+#thumb1 {
+  background-image: url("images/spritesheet.png");
+  background-position: 0px -37px;
+}
+#thumb2 {
+  background-image: url("images/spritesheet.png");
+  background-position: -85px -37px;
+}
+#thumb3 {
+  background-image: url("images/spritesheet.png");
+  background-position: -170px -37px;
+}
+#thumb4 {
+  background-image: url("images/spritesheet.png");
+  background-position: -255px -37px;
+}
+#thumb5 {
+  background-image: url("images/spritesheet.png");
+  background-position: -341px -37px;
+}
+
+.header-numbers {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  align-self: center;
+}
+
+.numbers {
+  color: rgb(112, 212, 201);
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
+  width: 77px;
+}
+
+.desc-body {
+  color: rgb(81, 81, 81);
+  width: 375px;
+  font-size: 14px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+.desc-title {
+  width: 380px;
+  background-color: rgb(112, 212, 201);
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.website-text {
+  color: magenta;
+  text-decoration: none;
+}
+footer {
+  background-color: white;
+  border: 1px solid rgb(214, 214, 214);
+}
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
