@@ -714,17 +714,17 @@ body {
   box-shadow: 17px 14px 22px -16px rgba(0, 0, 0, 0.35);
   position: relative;
   border-radius: 6px;
-  margin: 2.4rem 2.4rem;
+  margin: 24px 24px;
   transition: all 0.6s; }
   .project-field:hover {
-    transform: translateY(-0.33rem); }
+    transform: translateY(-3px); }
   .project-field__techstack {
     display: flex;
     justify-content: center;
-    font-size: 2.4rem; }
+    font-size: 24px; }
     .project-field__techstack i,
     .project-field__techstack img {
-      margin: 1.2rem 1.2rem; }
+      margin: 12px 12px; }
   .project-field__img .project-field__visit-text {
     opacity: 0;
     visibility: hidden;
@@ -733,10 +733,11 @@ body {
     cursor: pointer; }
   .project-field__img {
     text-align: center;
+    height: 128px;
     width: 256px;
     display: block;
     overflow: hidden;
-    border-radius: 0.4rem;
+    border-radius: 4px;
     backface-visibility: hidden;
     transition: all 0.8s;
     z-index: 1 !important; }
@@ -747,30 +748,28 @@ body {
       text-align: center;
       overflow: hidden;
       width: 100%;
-      transition: all 0.8s;
-      transform: scale(1); }
+      transition: all 0.8s; }
   .project-field__heading {
     display: block;
-    width: 25.6rem;
+    width: 256px;
     color: #262626 !important;
-    font-size: 1.6rem;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
-    padding: 1rem 0rem !important;
+    padding: 10px 0 !important;
     background-color: #262626;
     color: #FFF !important;
     text-align: center;
-    margin-top: -3px;
-    z-index: 10 !important; }
+    margin-top: -3px; }
   .project-field__role {
-    font-size: 1.28rem;
-    padding-top: 0.8rem;
+    font-size: 12.8px;
+    padding-top: 8px;
     font-weight: 300;
     text-align: center; }
   .project-field__desc {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 300;
-    margin-bottom: 3.6rem; }
+    margin-bottom: 36px; }
 
 .steps {
   margin: 0 auto; }
