@@ -1,77 +1,58 @@
-.project-intro{
-    padding: 3.6rem 25.6rem;
-    height: 80vh;
-    background-image: linear-gradient(180deg, $background-primary 0%, $background-primary 50%, $background-secondary 50%);
-    position: relative;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.project-intro {
+  padding: 9.6rem 25.6rem;
+  background-color: $background-secondary;
+  text-align: center;
 
-    @include respond(tab-land){
-        padding: 3.6rem 12.8rem;
-    }
-    @include respond(tab-port){
-        padding: 3.6rem 6.4rem;
-    }
-    @include respond(phone-large){
-        padding: 3.6rem 3.2rem;
-    }
-    @include respond(phone-small){
-        padding: 3.6rem 1.6rem;
-    }
+  @include respond(tab-land) {
+    padding: 3.6rem 12.8rem;
+  }
+  @include respond(tab-port) {
+    padding: 3.6rem 6.4rem;
+  }
+  @include respond(phone-large) {
+    padding: 3.6rem 3.2rem;
+  }
+  @include respond(phone-small) {
+    padding: 3.6rem 1.6rem;
+  }
 }
 
-.project__heading{
-    width: 100%;
-    padding: .4rem;
-    height: 50%;
-    &--top{
-        height: 6.4rem;
-        font-size: 3.6rem;
-        margin-top: -1.2rem;
+.project__heading {
+  width: 100%;
+  padding: 0.4rem;
+  color: $text-secondary;
+  font-size: 2.4rem;
+  &--top {
+    height: 6.4rem;
+    font-size: 3.6rem;
+    margin-top: -1.2rem;
 
-        @include respond(phone-small){
-            font-size: 2.4rem;
-        }
-    
+    @include respond(phone-small) {
+      font-size: 2.4rem;
     }
-    &--bottom{
-        color: $text-secondary;
-        display: inline;
-        font-size: 2.4rem;
+  }
+  &--bottom {
+    display: inline;
+    font-size: 2.4rem;
 
-        @include respond(phone-small){
-            font-size: 1.6rem;
-        }
+    @include respond(phone-small) {
+      font-size: 1.6rem;
     }
+  }
 }
 
-.projects-list{
-    margin-top: -0.1rem;
-    padding: 9.6rem 25.6rem;
-    margin-bottom: 4.8rem;
-    background-color: $background-secondary;
-    position: relative;
-    color: $text-secondary;
+.projects-list {
+  margin-top: -0.1rem;
+  margin-bottom: 4.8rem;
+  background-color: $background-secondary;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: $text-secondary;
 
-    @include respond(tab-land){
-        padding: 9.6rem 12.8rem;
-    }
-    @include respond(tab-port){
-        padding: 9.6rem 6.4rem;
-    }
-    @include respond(phone-large){
-        padding: 9.6rem 3.2rem;
-    }
-    @include respond(phone-small){
-        padding: 9.6rem 1.6rem;
-    }
-
-    h3{
-        color: $text-primary;
-        text-transform: uppercase;
-    }
+  h3 {
+    color: $text-primary;
+    text-transform: uppercase;
+  }
 }
-

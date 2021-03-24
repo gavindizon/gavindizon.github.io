@@ -1,111 +1,117 @@
-.home-section{
+.home-section {
+  padding: 3rem 25.6rem;
+  height: auto;
 
-    padding: 3rem 25.6rem;
+  .icons-resume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  @include respond(tab-land) {
+    padding: 3rem 12.8rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 3rem 6.4rem;
+  }
+
+  @include respond(phone-large) {
+    padding: 2.4rem 3.2rem;
+    .icons-resume {
+      justify-content: center;
+    }
+  }
+  @include respond(phone-small) {
+    padding: 2.4rem 2.4rem;
+  }
+
+  &__img {
+    position: relative;
+    padding: 9.6rem;
     height: auto;
-    @include respond(tab-land){
-        padding: 3rem 12.8rem;
+
+    @include respond(phone-large) {
+      padding: 6.4rem;
+    }
+    & img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 19.2rem;
+      height: 19.2rem;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
+
+      @include respond(phone-large) {
+        width: 12.8rem;
+        height: 12.8rem;
+      }
+    }
+  }
+
+  &__text {
+    width: 100%;
+    & h3 {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 100;
+      font-size: 3.6em;
+      color: $text-primary;
+      text-align: center;
     }
 
-    @include respond(tab-port){
-        padding: 3rem 6.4rem;
+    & p {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 300;
+      font-size: 2.1rem;
+      a {
+        color: $text-primary;
+        font-weight: 400;
+      }
     }
 
-    @include respond(phone-large){
-        padding: 2.4rem 3.2rem;
+    @include respond(phone-large) {
+      & h3 {
+        font-size: 2.4em;
+      }
+
+      & p {
+        font-size: 1.6rem;
+      }
     }
-    @include respond(phone-small){
-        padding: 2.4rem 2.4rem;
+  }
+  &__socmed {
+    padding: 0.8rem;
+    @include respond(phone-large) {
+      text-align: center;
     }
+    li {
+      list-style-type: none;
+      display: inline-block;
+      font-size: 3.2rem;
+      padding-right: 3.6rem;
 
-    &__img{
-        position: relative;
-        padding: 9.6rem;
-        height: auto;
+      @include respond(btn-brkpoint) {
+        padding-right: 1.6rem;
+        font-size: 3.6rem;
+      }
+      @include respond(phone-large) {
+        padding-right: 0rem;
+        padding: 1.2rem 1.6rem;
+        font-size: 3.6rem;
+      }
+      a {
+        text-decoration: none;
+        color: $text-primary;
+        opacity: 0.7;
+        transition: all 0.6s;
 
-        @include respond(phone-large){
-            padding: 6.4rem;
+        &:hover {
+          opacity: 1;
         }
-        & img{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            width: 19.2rem;
-            height: 19.2rem;
-            border-radius: 50%;
-            border: none;
-            box-shadow: 0rem 1rem 1rem rgba(0,0,0, 0.2);
-
-            @include respond(phone-large){
-                width: 12.8rem;
-                height: 12.8rem;
-                }
-
-        }
+      }
     }
-
-    &__text{
-        width: 100%;
-        & h3{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 100;
-            font-size: 3.6em;
-            color: $text-primary;
-            text-align: center;
-        }
-
-        & p{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 300;
-            font-size: 2.1rem;
-            a{
-                color: $text-primary;
-                font-weight: 400;
-            }
-
-        }
-
-        @include respond(phone-large){
-            & h3{
-                font-size: 2.4em;
-            }
-
-            & p{
-                font-size: 1.6rem;
-            }
-
-        }
-
-    }
-    &__socmed{
-        padding: .8rem;
-        @include respond(phone-large){
-            text-align: center;
-        }
-        li{
-            list-style-type: none;
-            display: inline-block;
-            font-size: 3.2rem;
-            padding-right: 3.6rem;
-
-            @include respond(btn-brkpoint){
-                padding-right: 1.6rem;
-                font-size: 3.6rem;
-            
-            }
-            @include respond(phone-large){
-                padding-right: 0rem;
-                padding: 1.2rem 1.6rem;
-                font-size: 3.6rem;
-            }
-            a{
-                text-decoration: none;
-                color: $text-primary;
-                opacity: .8;
-                &:hover{
-                opacity: 1;
-                }
-            }
-        }
-    }
+  }
 }

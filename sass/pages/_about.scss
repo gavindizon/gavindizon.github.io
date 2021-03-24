@@ -1,103 +1,174 @@
-.about-body{
-    background-color: $background-secondary;
+.about-body {
+  background-color: $background-secondary;
 }
-.about-intro{
-    background-color: #FFF;
-    padding: 3.6rem 25.6rem;
-    height: 80vh;
-    background-image: linear-gradient(180deg, $background-primary 0%, $background-primary 50%, $background-secondary 50%);
-    position: relative;
-    margin: 0 auto;
-    text-align: center;
+.about-education {
+  background-color: $background-primary;
+  padding: 4.8rem 25.6rem;
+  margin-top: 6.4rem;
+  position: relative;
+
+  h3 {
+    font-size: 2.1rem;
+    font-weight: 400;
+  }
+  h4 {
+    font-size: 1.6rem;
+    font-weight: 200;
+  }
+
+  @include respond(tab-land) {
+    padding: 3.6rem 12.8rem;
+  }
+  @include respond(tab-port) {
+    padding: 3.6rem 6.4rem;
+  }
+  @include respond(phone-large) {
+    padding: 3.6rem 3.2rem;
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+    h4 {
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
+  @include respond(phone-small) {
+    padding: 3.6rem 1.6rem;
+  }
+
+  .educ-item {
     display: flex;
-    justify-content: center;
+    //flex-wrap: wrap;
+    opacity: 0.8;
+    margin: 2.56rem 0;
     align-items: center;
+    justify-content: flex-start;
 
-    @include respond(tab-land){
-        padding: 3.6rem 12.8rem;
+    &--active {
+      opacity: 1;
     }
-    @include respond(tab-port){
-        padding: 3.6rem 6.4rem;
+
+    &-iconholder {
+      width: 12.8rem;
+      height: 12.8rem;
+      margin: 0 4.8rem;
+      border: 0.4rem solid #fff;
+      border-radius: 6.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 6.4rem;
+      @include respond(phone-large) {
+        width: 9.6rem;
+        height: 9.6rem;
+        font-size: 4.8rem;
+        margin: 0 1.2rem;
+      }
     }
-    @include respond(phone-large){
-        padding: 3.6rem 3.2rem;
-    }
-    @include respond(phone-small){
-        padding: 3.6rem 1.6rem;
-    }
+  }
+}
+.about-intro {
+  background-color: #fff;
+  padding: 3.6rem 25.6rem;
+  height: 80vh;
+  background-image: linear-gradient(
+    180deg,
+    $background-primary 0%,
+    $background-primary 50%,
+    $background-secondary 50%
+  );
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(tab-land) {
+    padding: 3.6rem 12.8rem;
+  }
+  @include respond(tab-port) {
+    padding: 3.6rem 6.4rem;
+  }
+  @include respond(phone-large) {
+    padding: 3.6rem 3.2rem;
+  }
+  @include respond(phone-small) {
+    padding: 3.6rem 1.6rem;
+  }
 }
 
-.about__heading{
-    font-size: 3.6rem;
-    width: 100%;
-    padding: .4rem;
-    height: 50%;
-    &--top{
-        height: 5.12rem;
-    }
-    &--bottom{
-        color: $text-secondary;
-        display: inline;
-    }
-    @include respond(phone-small){
-        font-size: 2.4rem;
-    }
-}
-
-.typed-cursor{
-    color: transparent;
-    font-size: 3.6rem;
-    position: relative;
-    &::before{
-        content: "";
-        position: absolute;
-        margin-top: .4rem;
-        background-color: $text-secondary;
-        height: 3.6rem;
-        width: 1.6rem;
-    }
-}
-.about-process{
-    padding: 6.4rem 25.6rem;
-    background-color: $background-secondary;
-    position: relative;
+.about__heading {
+  font-size: 3.6rem;
+  width: 100%;
+  padding: 0.4rem;
+  height: 50%;
+  &--top {
+    height: 5.12rem;
+  }
+  &--bottom {
     color: $text-secondary;
-
-    @include respond(tab-land){
-        padding: 9.6rem 12.8rem;
-    }
-    @include respond(tab-port){
-        padding: 9.6rem 6.4rem;
-    }
-    @include respond(phone-large){
-        padding: 9.6rem 3.2rem;
-    }
-    @include respond(phone-small){
-        padding: 9.6rem 1.6rem;
-    }
-
-    h3{
-        color: $text-primary;
-        text-transform: uppercase;
-    }
+    display: inline;
+  }
+  @include respond(phone-small) {
+    font-size: 2.4rem;
+  }
 }
 
-.about-affiliate{
-    position: relative;
-    background-color: $background-primary;
-    padding: 4.8rem 25.6rem 9.6rem;
+.typed-cursor {
+  color: transparent;
+  font-size: 3.6rem;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    margin-top: 0.4rem;
+    background-color: $text-secondary;
+    height: 3.6rem;
+    width: 1.6rem;
+  }
+}
+.about-process {
+  padding: 6.4rem 25.6rem;
+  background-color: $background-secondary;
+  position: relative;
+  color: $text-secondary;
 
-    @include respond(tab-land){
-        padding: 4.8rem 12.8rem 9.6rem;
-    }
-    @include respond(tab-port){
-        padding: 4.8rem 6.4rem 9.6rem;
-    }
-    @include respond(phone-large){
-        padding: 4.8rem 3.2rem 9.6rem;
-    }
-    @include respond(phone-small){
-        padding: 4.8rem 1.6rem 9.6rem;
-    }
+  @include respond(tab-land) {
+    padding: 9.6rem 12.8rem;
+  }
+  @include respond(tab-port) {
+    padding: 9.6rem 6.4rem;
+  }
+  @include respond(phone-large) {
+    padding: 9.6rem 3.2rem;
+  }
+  @include respond(phone-small) {
+    padding: 9.6rem 1.6rem;
+  }
 
+  h3 {
+    color: $text-primary;
+    text-transform: uppercase;
+  }
+}
+
+.about-affiliate {
+  position: relative;
+  background-color: $background-primary;
+  padding: 4.8rem 25.6rem 9.6rem;
+
+  @include respond(tab-land) {
+    padding: 4.8rem 12.8rem 9.6rem;
+  }
+  @include respond(tab-port) {
+    padding: 4.8rem 6.4rem 9.6rem;
+  }
+  @include respond(phone-large) {
+    padding: 4.8rem 3.2rem 9.6rem;
+  }
+  @include respond(phone-small) {
+    padding: 4.8rem 1.6rem 9.6rem;
+  }
 }

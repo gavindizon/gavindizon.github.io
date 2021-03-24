@@ -1,10 +1,10 @@
-.card-dark {
+.card-light {
   background: linear-gradient(
     to bottom right,
-    rgba($background-primary, 0.98) 0%,
-    rgba($background-primary, 0.98) 50%,
-    rgba($background-primary, 0.95) 50%,
-    rgba($background-primary, 0.95) 100%
+    rgba($background-secondary, 0.98) 0%,
+    rgba($background-secondary, 0.98) 50%,
+    rgba($background-secondary, 0.95) 50%,
+    rgba($background-secondary, 0.95) 100%
   );
   width: 90%;
 
@@ -12,7 +12,7 @@
   box-shadow: 1px 4px 4px rgba($background-primary, 0.2);
   transition: all 0.4s linear;
   backface-visibility: hidden;
-  color: $text-primary;
+  color: $text-secondary;
   padding: 2.4rem 2.4rem;
   text-align: center;
   height: 30rem;
